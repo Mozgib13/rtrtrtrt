@@ -1,0 +1,4 @@
+elevation range: -4.0 .. 235.0 m
+water level (in-game ocean) = 0.0 m
+PNG pixel value 0 -> -4.000 m ; 65535 -> 235.000 m
+cell size: 6.0000 m ; grid: 2048 x 2048 ; world: 12288 x 12288 m

@@ -1,0 +1,24 @@
+# never commit private keys or built artifacts
+*.biprivatekey
+*.pbo
+*.bisign
+*.wrp
+*.p3d
+unpacked/
+addon builder outputs/
+
+# Terrain Builder work files
+source/TerrainBuilder/
+*.v4d
+*.v4w
+*.tml
+*.v3o
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# OS junk
+Thumbs.db
+.DS_Store
