@@ -1,0 +1,24 @@
+@echo off
+REM start-krasnoyarsk.cmd.sample — запуск выделенного сервера DayZ 1.30 с картой Krasnoyarsk.
+REM Положите рядом с DayZServer_x64.exe и поправьте пути под свою установку.
+REM
+REM КЛЮЧЕВОЕ ПРАВИЛО:
+REM   Карта грузится через -mod=  (клиенты грузят её тоже) — это НЕ serverMod.
+REM   -serverMod= подходит только для серверных скриптов (админ-меню, логирование),
+REM   но НЕ для карт: клиент не может отрисовать мир, которого у него нет.
+
+cd /d "%~dp0"
+
+set "PORT=2302"
+set "CONFIG=serverDZ.cfg"
+set "PROFILE=profiles"
+set "MODS=-mod=@KrasnoyarskMap"
+REM Пример с доп. серверными скриптами (по желанию):
+REM set "SERVERMOD=-serverMod=@AdminScripts"
+
+start "DayZ Server (Krasnoyarsk)" DayZServer_x64.exe ^
+  -config=%CONFIG% -port=%PORT% -profiles=%PROFILE% ^
+  -dologs -adminLog -netLog -freezecheck ^
+  %MODS%
+
+exit /b 0

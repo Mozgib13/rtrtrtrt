@@ -1,0 +1,45 @@
+// serverDZ.cfg.SAMPLE — пример для выделенного сервера DayZ 1.30 с картой Krasnoyarsk.
+// НЕ ЗАМЕНЯЙТЕ вслепую свой рабочий serverDZ.cfg. Обычно достаточно поменять ДВЕ вещи:
+//   1) template в class Missions -> "dayzOffline.krasnoyarsk"
+//   2) при необходимости имя/пароль сервера ниже.
+// Остальное оставьте как у вас работает.
+
+hostname = "Krasnoyarsk | Private";
+password = "";               // пароль на вход (если сервер приватный)
+passwordAdmin = "CHANGE_ME"; // пароль админа — обязательно поменять
+enableWhitelist = 0;
+disableVoN = 0;
+vonCodecQuality = 10;
+disable3rdPerson = 0;
+disableCrosshair = 0;
+disablePersonalLight = 1;
+enableDebugMonitor = 0;
+speedhackDetection = 1;
+
+maxPlayers = 60;
+
+// Сервер принимает только подписанные моды. 2 = обязательно (рекомендуется).
+// 0 — только для первичной отладки (НИКОГДА не оставляйте 0 на боевом сервере).
+verifySignatures = 2;
+
+enableCfgGameplayFile = 1; // наличие cfggameplay.json в миссии включает его приоритеты
+
+// --- Миссия ---
+class Missions
+{
+    class DayZ
+    {
+        // Имя папки в mpmissions\
+        template = "dayzOffline.krasnoyarsk";
+    };
+};
+
+// --- Экономика/опционально ---
+class EconomyOptions
+{
+    sendStatistics = 0;
+    territoryFlag = 0;
+    zombieAutoSpawn = 1;   // 1 = зомби включены (нужны building-кластеры, см. mission README)
+    lootAutoSpawn = 1;
+    respawnLoot = 1;
+};
